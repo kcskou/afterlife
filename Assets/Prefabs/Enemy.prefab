@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21223346}
   - 50: {fileID: 5000984}
   - 60: {fileID: 6087036}
-  - 114: {fileID: 11472612}
+  - 114: {fileID: 11478306}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Ghost
@@ -68,7 +68,7 @@ PolygonCollider2D:
       - {x: -0.43301272, y: -0.24999994}
       - {x: -0.000000029802322, y: -0.5}
       - {x: 0.43301272, y: -0.25000003}
---- !u!114 &11472612
+--- !u!114 &11478306
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -76,10 +76,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 132808}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d17ca705ebafd3408901fd2392338c0, type: 3}
+  m_Script: {fileID: 11500000, guid: f9434521046cbd143a8eb6aea6e6685e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  player: {fileID: 0}
+  moveSpeed: 4
 --- !u!212 &21223346
 SpriteRenderer:
   m_ObjectHideFlags: 1

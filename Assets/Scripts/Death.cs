@@ -8,6 +8,7 @@ public class Death : MonoBehaviour {
 	{
 		if (other.gameObject.tag == "Ghost")
 		{
+
             Application.LoadLevel("Game Over Menu");
             print ("DEATH");
            

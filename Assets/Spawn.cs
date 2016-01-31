@@ -12,23 +12,26 @@ public class Spawn : MonoBehaviour {
 	public Transform playAreaMax;
 
 	private Vector3 spawnPoint;
-	public float deltaSpawnBreaks = -0.05f;
+	public float deltaSpawnBreaks = -0.02f;
 
 	public float spawnHeight = 0.0f;
 	public float maxNumGhost = 40;
 	private int amount;
 
 	private float nextSpawnTime = 0.0f;
-	public float spawnBreaks = 1.5f;
+    public float spawnBreaks = 2.0f;
+    public float spawnWait = 1.0f;
+
+    static public int diffLevel = 0;
+    
 
 	void Start(){
-		
-		//spawnPoint = Camera.main.ViewportPointToRay]
-		//limitMin = Camera.main.ScreenToWorldPoint (new Vector3 (0, 0, Camera.main.transform.position.y));
-		//limitMax = Camera.main.ScreenToWorldPoint (new Vector3 (Screen.width, Screen.height, Camera.main.transform.position.y));
-		//outerSpawnMin = new Vector3 (limitMin.x + 1, limitMin.z + 1);
-		//outerSpawnMax = new Vector3 (limitMax.x + 1, limitMax.z + 1);
-	}
+        Debug.Log("StartingSpawn");
+        diffLevel = 0;
+        spawnBreaks = 2.0f;
+        StartCoroutine(ChangeSpawnTime());
+        StartCoroutine(SpawnLogic());
+    }
 		
 	Vector3 GetSpawnPoint() {
 		float x = 0;
@@ -52,24 +55,41 @@ public class Spawn : MonoBehaviour {
 	void spawnCube()
 	{	
 		amount = GhostController.ghostList.Count;
-		if (amount < maxNumGhost) {		
-			
-			Instantiate (prefabGhosts [Random.Range (0, prefabGhosts.Length)], GetSpawnPoint (), Quaternion.identity);
+		if (amount < maxNumGhost) {
+            int ghostIndex = Mathf.Clamp(diffLevel, 0, prefabGhosts.Length);
+			Instantiate (prefabGhosts [Random.Range (0, ghostIndex)], GetSpawnPoint (), Quaternion.identity);
 		}
 	}
 	
-	// Update is called once per frame
-	void Update () {
+    IEnumerator SpawnLogic()
+    {
+        while(true)
+        {
+            spawnCube();
+            yield return new WaitForSeconds(spawnBreaks);
+        }
+    }
 
-		if (Time.time > nextSpawnTime) {
-			//max += spawnRate * Time.deltaTime;
-			spawnCube();
-			nextSpawnTime += spawnBreaks;
+    IEnumerator ChangeSpawnTime()
+    {
+        while(true)
+        {
+            spawnBreaks = Mathf.Clamp(spawnBreaks + deltaSpawnBreaks, 0.5f, 2);
+            yield return new WaitForSeconds(spawnWait);
+        }
+    }
+	//// Update is called once per frame
+	//void Update () {
 
-			float check = spawnBreaks + deltaSpawnBreaks;
-			if (check > 0.5) {
-				spawnBreaks += deltaSpawnBreaks;
-			}
-		}
-	}
+	//	if (Time.time > nextSpawnTime) {
+	//		//max += spawnRate * Time.deltaTime;
+	//		spawnCube();
+	//		nextSpawnTime += spawnBreaks;
+
+	//		float check = spawnBreaks + deltaSpawnBreaks;
+	//		if (check > 0.5) {
+	//			spawnBreaks += deltaSpawnBreaks;
+	//		}
+	//	}
+	//}
 }

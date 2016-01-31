@@ -28,6 +28,7 @@ public class DestroyEnemy : MonoBehaviour {
 		{
 			Destroy(other.gameObject);
             count = count + 100;
+            Spawn.diffLevel = Mathf.FloorToInt(count / 1000);
 		}   
 	}
 }

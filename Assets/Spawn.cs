@@ -17,45 +17,39 @@ public class Spawn : MonoBehaviour {
 	//private Vector3 outerSpawnMin;
 	//private Vector3 outerSpawnMax;
 
-	public float spawnHeight = 0.5f;
-	public int max = 40;
-	public GameObject[] amount;
+	public float spawnHeight = 0.0f;
+	public int max = 30;
+	public int amount;
 
 	public float a = 0.8f;
 	public float c = 0.1f;
 
 	void Start(){
-
+		
 		//spawnPoint = Camera.main.ViewportPointToRay]
 		//limitMin = Camera.main.ScreenToWorldPoint (new Vector3 (0, 0, Camera.main.transform.position.y));
 		//limitMax = Camera.main.ScreenToWorldPoint (new Vector3 (Screen.width, Screen.height, Camera.main.transform.position.y));
 		//outerSpawnMin = new Vector3 (limitMin.x + 1, limitMin.z + 1);
 		//outerSpawnMax = new Vector3 (limitMax.x + 1, limitMax.z + 1);
 	}
-
-	void setPoints()
-	{	
-		spawnPoint.x = Random.Range(0.0f,1.0f);
-		spawnPoint.y = 0.5f;
-		spawnPoint.z = Random.Range(0.0f,1.0f);
-	}
-
-
+		
 	Vector3 GetSpawnPoint() {
 		float x = 0;
-		if (Random.value < 0.5) {
+		float y = 0;
+		if (Random.value < 0.35) {
 			x = Random.Range (minSpawn.position.x, playAreaMin.position.x);
-		} else {
+			y = Random.Range (playAreaMin.position.y, playAreaMax.position.y);
+		} else if (Random.value < 0.5) {
 			x = Random.Range (playAreaMax.position.x, maxSpawn.position.x);
-		}
-		float z = 0;
-		if (Random.value < 0.5) {
-			z = Random.Range (minSpawn.position.z, playAreaMin.position.z);
+			y = Random.Range (playAreaMin.position.y, playAreaMax.position.y);
+		} else if (Random.value < 0.75) {
+			x = Random.Range (playAreaMin.position.x, playAreaMax.position.x);
+			y = Random.Range (minSpawn.position.y, playAreaMin.position.y); 
 		} else {
-			z = Random.Range (playAreaMax.position.z, maxSpawn.position.z);
+			x = Random.Range (playAreaMin.position.x, playAreaMax.position.x);
+			y = Random.Range (playAreaMax.position.y, maxSpawn.position.y); 
 		}
-
-		return new Vector3 (x, spawnHeight, z);
+		return new Vector3 (x, y, spawnHeight);
 	}
 
 	void spawnCube()
@@ -67,11 +61,9 @@ public class Spawn : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		amount = GameObject.FindGameObjectsWithTag("ghost");
-		//amount = GhostController.ghostList.Count;
-		if (amount.Length < max)
+		amount = GhostController.ghostList.Count;
+		if (amount < max)
 		{
-			setPoints();
 			spawnCube();
 		}
 	}

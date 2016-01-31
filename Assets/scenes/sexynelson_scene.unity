@@ -527,6 +527,10 @@ Prefab:
       propertyPath: pauseText
       value: 
       objectReference: {fileID: 1223233500}
+    - target: {fileID: 11478784, guid: f65574b886338704fb0f27a7da1d2101, type: 2}
+      propertyPath: pain
+      value: 
+      objectReference: {fileID: 8300000, guid: f96c05056cc3bc14e8ae880d2d8173c7, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f65574b886338704fb0f27a7da1d2101, type: 2}
   m_IsPrefabParent: 0

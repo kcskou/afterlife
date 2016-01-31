@@ -5,5 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/scenes/joystick.unity
   - enabled: 1
-    path: Assets/scenes/main_scene.unity
+    path: Assets/scenes/main.unity

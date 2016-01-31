@@ -4,7 +4,7 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerController : MonoBehaviour {
 
-    public float moveForce = 5, boostMultiplier = 2;
+    private float moveForce = 5, boostMultiplier = 2;
     Rigidbody2D myBody;
 
 	void Start () {
@@ -12,10 +12,12 @@ public class PlayerController : MonoBehaviour {
 	}
 	
 	void FixedUpdate () {
-        Vector2 moveVec = new Vector2(CrossPlatformInputManager.GetAxis("Horizontal"),
-            CrossPlatformInputManager.GetAxis("Vertical")) * moveForce;
+
+        Vector2 dirVec = new Vector2(CrossPlatformInputManager.GetAxis("Horizontal"),
+            CrossPlatformInputManager.GetAxis("Vertical"));
+ 
+        Vector2 moveVec = dirVec * moveForce;
         bool isBoosting = CrossPlatformInputManager.GetButton("Boost");
         myBody.AddForce(moveVec * (isBoosting ? boostMultiplier : 1));
-
 	}
 }

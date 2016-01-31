@@ -29,9 +29,16 @@ public class PlayerAnimation : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		// check for input
-		if(Input.GetKeyDown (KeyCode.W)) {
-
+		if (Input.GetKeyDown (KeyCode.W)) {
+			changeState (STATE_UP);
+		} else if (Input.GetKeyDown (KeyCode.S)) {
+			changeState (STATE_DOWN);
+		} else if (Input.GetKeyDown (KeyCode.A)) {
+			changeState (STATE_LEFT);
+		} else if (Input.GetKeyDown (KeyCode.D)) {
+			changeState (STATE_RIGHT);
 		}
+
 	}
 
 	void changeState(int state) {
@@ -42,19 +49,19 @@ public class PlayerAnimation : MonoBehaviour {
 		switch (state) {
 
 		case STATE_DOWN:
-			ani.SetInteger ("state", STATE_DOWN);
+			ani.SetInteger ("State", STATE_DOWN);
 			break;
 
 		case STATE_UP:
-			ani.SetInteger ("state", STATE_UP);
+			ani.SetInteger ("State", STATE_UP);
 			break;
 
 		case STATE_LEFT:
-			ani.SetInteger ("state", STATE_LEFT);
+			ani.SetInteger ("State", STATE_LEFT);
 			break;
 
 		case STATE_RIGHT:
-			ani.SetInteger ("state", STATE_RIGHT);
+			ani.SetInteger ("State", STATE_RIGHT);
 			break;
 		}
 

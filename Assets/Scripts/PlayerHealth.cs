@@ -4,15 +4,15 @@ using System.Collections;
 public class PlayerHealth : MonoBehaviour {
 
     private int Health;
-    public static int MaxHealth = 10;
+    public int MaxHealth = 10;
 
 	// Use this for initialization
 	void Start () {
         Health = MaxHealth;
 	}
 
-    void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.name == "Ghost") {
+    void OnCollisionEnter2D(Collision2D other) {
+        if (other.gameObject.tag == "Ghost") {
             Health--;
             print("????" + Health + "\n");
         }

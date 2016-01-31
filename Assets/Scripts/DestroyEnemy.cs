@@ -26,7 +26,8 @@ public class DestroyEnemy : MonoBehaviour {
 	{
 		if (other.gameObject.tag == "Ghost")
 		{
-			Destroy(other.gameObject);
+            SoundManager.Play("CircleTouch");
+            Destroy(other.gameObject);
             count = count + 100;
             Spawn.diffLevel = Mathf.FloorToInt(count / 1000);
 		}   

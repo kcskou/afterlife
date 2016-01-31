@@ -102,10 +102,10 @@ public class GhostController : MonoBehaviour {
 		ani.SetInteger ("idleMove", move);
 	}
 
-    void OnTriggerEnter2D(Collision2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-        if (other.gameObject.name == "Attack")
+        if (other.gameObject.tag == "Attack")
         {
             Vector2 dirVec = (attack.transform.position - transform.position).normalized;
             print(dirVec.x + "/" + dirVec.y);

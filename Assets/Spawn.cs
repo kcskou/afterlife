@@ -12,13 +12,10 @@ public class Spawn : MonoBehaviour {
 	public Transform playAreaMax;
 
 	private Vector3 spawnPoint;
-	//private Vector3 limitMin;
-	//private Vector3 limitMax;
-	//private Vector3 outerSpawnMin;
-	//private Vector3 outerSpawnMax;
+	private float spawnRate = 0.3f;
 
 	public float spawnHeight = 0.0f;
-	public int max = 30;
+	public float max = 1;
 	public int amount;
 
 	public float a = 0.8f;
@@ -62,6 +59,7 @@ public class Spawn : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		amount = GhostController.ghostList.Count;
+		max += spawnRate * Time.deltaTime;
 		if (amount < max)
 		{
 			spawnCube();

@@ -22,7 +22,6 @@ public class Spawn : MonoBehaviour {
 	public float c = 0.1f;
 
 	void Start(){
-		
 		//spawnPoint = Camera.main.ViewportPointToRay]
 		//limitMin = Camera.main.ScreenToWorldPoint (new Vector3 (0, 0, Camera.main.transform.position.y));
 		//limitMax = Camera.main.ScreenToWorldPoint (new Vector3 (Screen.width, Screen.height, Camera.main.transform.position.y));

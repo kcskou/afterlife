@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GhostController : MonoBehaviour {
+public class GhostControllerNelson : MonoBehaviour {
 
 	Animator ani;
 

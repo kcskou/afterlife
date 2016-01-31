@@ -63,11 +63,13 @@ public class GhostController : MonoBehaviour {
 
         // Move ourselves in that direction
         transform.position += direction * moveSpeed * Time.deltaTime;
-		if (direction.x > 0) {
-			changeState (STATE_RIGHT);
+		if (direction.x > direction.y) {
+			if (direction.x > 0) {
+				changeState (STATE_RIGHT);
+			} else if (direction.y < 0) {
+				changeState (STATE_LEFT);
+			}
 		} else if (direction.x < 0) {
-			changeState (STATE_LEFT);
-		} else if (direction.y < 0) {
 			changeState (STATE_DOWN);
 		} else if (direction.y > 0) {
 			changeState (STATE_UP);

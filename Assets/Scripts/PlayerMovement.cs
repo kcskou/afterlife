@@ -5,23 +5,25 @@ public class PlayerMovement : MonoBehaviour {
 
 	public float speed = 5.0f;
 
-	private bool isStanding = true; // player is idle
-
 	Animator ani;
 
-	// flags to be checked
-	bool isUp = false;
-	bool isDown = true;
-	bool isLeft = false;
-	bool isRight = false;
-
 	//animation states
-	const int STATE_DOWN = 0;
-	const int STATE_UP = 1;
-	const int STATE_LEFT = 2;
-	const int STATE_RIGHT = 3;
+	const float STATE_DOWN = 0.1f;
+	const float STATE_UP = 1.1f;
+	const float STATE_LEFT = 2.1f;
+	const float STATE_RIGHT = 3.1f;
 
-	int currentState = STATE_DOWN;
+	const string DOWN = "0.1";
+	const string UP = "1.1";
+	const string LEFT = "2.1";
+	const string RIGHT = "3.1";
+
+	const int IDLE = 0;
+	const int MOVE = 1;
+
+	int MOVING = 0;
+	float currentState = STATE_DOWN;
+	float currentIdle = STATE_DOWN;
 
 
 	// Use this for initialization
@@ -30,45 +32,58 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void FixedUpdate()	{
+		var stop = new Vector3 (0, 0, 0);
 		var move = new Vector3 (Input.GetAxis ("Horizontal"), Input.GetAxis ("Vertical"), 0);
 		transform.position += move * speed * Time.deltaTime;
+		if (move == stop) {
+			changeMove (IDLE);
+		}
 		if (move.x > 0) {
 			changeState (STATE_RIGHT);
+			changeMove (MOVE);
 		} else if (move.x < 0) {
 			changeState (STATE_LEFT);
+			changeMove (MOVE);
 		} else if (move.y < 0) {
 			changeState (STATE_DOWN);
+			changeMove (MOVE);
 		} else if (move.y > 0) {
 			changeState (STATE_UP);
+			changeMove (MOVE);
 		}
 	}
 		
 
-	void changeState(int state) {
+	void changeState(float state) {
 		if (currentState == state) {
 			return;
 		}
 
-		switch (state) {
+		switch (state.ToString()) {
 
-		case STATE_DOWN:
-			ani.SetInteger ("State", STATE_DOWN);
+		case DOWN:
+			ani.SetFloat ("Blend", STATE_DOWN);
 			break;
 
-		case STATE_UP:
-			ani.SetInteger ("State", STATE_UP);
+		case UP:
+			ani.SetFloat ("Blend", STATE_UP);
 			break;
 
-		case STATE_LEFT:
-			ani.SetInteger ("State", STATE_LEFT);
+		case LEFT:
+			ani.SetFloat ("Blend", STATE_LEFT);
 			break;
 
-		case STATE_RIGHT:
-			ani.SetInteger ("State", STATE_RIGHT);
+		case RIGHT:
+			ani.SetFloat ("Blend", STATE_RIGHT);
 			break;
 		}
 
 		currentState = state;
+		currentIdle = state;
+	}
+
+	void changeMove(int move) {
+		ani.SetInteger ("idleMove", move);
 	}
 
 }

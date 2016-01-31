@@ -14,12 +14,18 @@ public class PlayerAnimation : MonoBehaviour {
 	bool isRight = false;
 
 	//animation states
-	const int STATE_DOWN = 0;
-	const int STATE_UP = 1;
-	const int STATE_LEFT = 2;
-	const int STATE_RIGHT = 3;
+	const float STATE_DOWN = 0.0f;
+	const float STATE_UP = 1.0f;
+	const float STATE_LEFT = 2.0f;
+	const float STATE_RIGHT = 3.0f;
 
-	int currentState = STATE_DOWN;
+	const string DOWN = "0.0";
+	const string UP = "1.0";
+	const string LEFT = "2.0";
+	const string RIGHT = "3.0";
+
+
+	float currentState = STATE_DOWN;
 
 	// Use this for initialization
 	void Start () {
@@ -41,27 +47,27 @@ public class PlayerAnimation : MonoBehaviour {
 
 	}
 
-	void changeState(int state) {
+	void changeState(float state) {
 		if (currentState == state) {
 			return;
 		}
 
-		switch (state) {
+		switch (state.ToString()) {
 
-		case STATE_DOWN:
-			ani.SetInteger ("State", STATE_DOWN);
+		case DOWN:
+			ani.SetFloat ("Blend", STATE_DOWN);
 			break;
 
-		case STATE_UP:
-			ani.SetInteger ("State", STATE_UP);
+		case UP:
+			ani.SetFloat ("Blend", STATE_UP);
 			break;
 
-		case STATE_LEFT:
-			ani.SetInteger ("State", STATE_LEFT);
+		case LEFT:
+			ani.SetFloat ("Blend", STATE_LEFT);
 			break;
 
-		case STATE_RIGHT:
-			ani.SetInteger ("State", STATE_RIGHT);
+		case RIGHT:
+			ani.SetFloat ("Blend", STATE_RIGHT);
 			break;
 		}
 

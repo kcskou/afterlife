@@ -1,0 +1,355 @@
+fileFormatVersion: 2
+guid: e30f642594bb1254d993acc60556d6c6
+timeCreated: 1454207367
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: mainchara sheet_0
+    21300002: mainchara sheet_1
+    21300004: mainchara sheet_2
+    21300006: mainchara sheet_3
+    21300008: mainchara sheet_4
+    21300010: mainchara sheet_5
+    21300012: mainchara sheet_6
+    21300014: mainchara sheet_7
+    21300016: mainchara sheet_8
+    21300018: mainchara sheet_9
+    21300020: mainchara sheet_10
+    21300022: mainchara sheet_11
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: mainchara sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1152
+        width: 256
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 90, y: -73}
+        - {x: 76, y: 45}
+        - {x: 50, y: 106}
+        - {x: -35, y: 106}
+        - {x: -102, y: 68}
+        - {x: -116, y: 66}
+        - {x: -116, y: 29}
+        - {x: -107, y: 23}
+        - {x: -96, y: -101}
+        - {x: -105, y: -176}
+        - {x: 67, y: -176}
+        - {x: 90, y: -111}
+    - name: mainchara sheet_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1152
+        width: 256
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 102}
+        - {x: -116, y: 68}
+        - {x: -116, y: -61}
+        - {x: -89, y: -129}
+        - {x: -67, y: -161}
+        - {x: -64, y: -160}
+        - {x: -49, y: -150}
+        - {x: -25, y: -171}
+        - {x: -19, y: -176}
+        - {x: 50, y: -176}
+        - {x: 58, y: -171}
+        - {x: 84, y: -139}
+        - {x: 84, y: 51}
+        - {x: 76, y: 102}
+    - name: mainchara sheet_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1152
+        width: 256
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 76, y: 102}
+        - {x: -21, y: 102}
+        - {x: -116, y: 68}
+        - {x: -116, y: -61}
+        - {x: -89, y: -129}
+        - {x: -67, y: -161}
+        - {x: -64, y: -160}
+        - {x: -49, y: -150}
+        - {x: -29, y: -176}
+        - {x: 45, y: -176}
+        - {x: 53, y: -170}
+        - {x: 84, y: -136}
+        - {x: 84, y: 51}
+    - name: mainchara sheet_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 256
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 106}
+        - {x: -42, y: 91}
+        - {x: -42, y: -92}
+        - {x: -23, y: -176}
+        - {x: 32, y: -176}
+        - {x: 76, y: -142}
+        - {x: 76, y: 93}
+        - {x: 52, y: 106}
+    - name: mainchara sheet_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 256
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 102}
+        - {x: -44, y: 88}
+        - {x: -44, y: -178}
+        - {x: 56, y: -178}
+        - {x: 84, y: -124}
+        - {x: 84, y: -3}
+        - {x: 67, y: 49}
+        - {x: 57, y: 76}
+        - {x: 35, y: 102}
+    - name: mainchara sheet_5
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 256
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 36, y: 102}
+        - {x: -17, y: 102}
+        - {x: -42, y: 89}
+        - {x: -42, y: -164}
+        - {x: -32, y: -174}
+        - {x: -27, y: -178}
+        - {x: 64, y: -178}
+        - {x: 84, y: -165}
+        - {x: 84, y: -54}
+        - {x: 77, y: 51}
+    - name: mainchara sheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 256
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -44, y: 106}
+        - {x: -66, y: 84}
+        - {x: -70, y: -51}
+        - {x: -76, y: -56}
+        - {x: -76, y: -117}
+        - {x: -46, y: -176}
+        - {x: 18, y: -176}
+        - {x: 42, y: -55}
+        - {x: 42, y: 97}
+        - {x: 21, y: 106}
+    - name: mainchara sheet_7
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 256
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 44, y: 78}
+        - {x: 28, y: 94}
+        - {x: 5, y: 102}
+        - {x: -44, y: 102}
+        - {x: -66, y: 90}
+        - {x: -66, y: -165}
+        - {x: -55, y: -178}
+        - {x: 6, y: -178}
+        - {x: 39, y: -175}
+        - {x: 44, y: -173}
+    - name: mainchara sheet_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 384
+        width: 256
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 102}
+        - {x: -31, y: 102}
+        - {x: -82, y: 71}
+        - {x: -82, y: -178}
+        - {x: 28, y: -178}
+        - {x: 33, y: -175}
+        - {x: 42, y: -157}
+        - {x: 42, y: 78}
+        - {x: 25, y: 89}
+    - name: mainchara sheet_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17, y: -176}
+        - {x: 29, y: -173}
+        - {x: 37, y: -127}
+        - {x: 47, y: -142}
+        - {x: 76, y: -175}
+        - {x: 115, y: -49}
+        - {x: 116, y: -40}
+        - {x: 116, y: 50}
+        - {x: 88, y: 69}
+        - {x: 58, y: 38}
+        - {x: 24, y: 94}
+        - {x: 3, y: 106}
+        - {x: -31, y: 106}
+        - {x: -65, y: 98}
+        - {x: -90, y: 13}
+        - {x: -90, y: -143}
+        - {x: -58, y: -176}
+        - {x: -17, y: -176}
+        - {x: -14, y: -163}
+        - {x: -16, y: -171}
+        - {x: -12, y: -176}
+    - name: mainchara sheet_10
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 67, y: -160}
+        - {x: 91, y: -127}
+        - {x: 98, y: -52}
+        - {x: 94, y: 17}
+        - {x: 111, y: 20}
+        - {x: 116, y: 28}
+        - {x: 116, y: 46}
+        - {x: 88, y: 65}
+        - {x: 58, y: 34}
+        - {x: 24, y: 90}
+        - {x: 3, y: 102}
+        - {x: -24, y: 102}
+        - {x: -42, y: 96}
+        - {x: -49, y: 85}
+        - {x: -90, y: 82}
+        - {x: -90, y: -138}
+        - {x: -54, y: -180}
+        - {x: 26, y: -180}
+        - {x: 45, y: -130}
+        - {x: 49, y: -143}
+        - {x: 62, y: -160}
+    - name: mainchara sheet_11
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 111, y: 20}
+        - {x: 116, y: 28}
+        - {x: 116, y: 46}
+        - {x: 88, y: 65}
+        - {x: 58, y: 34}
+        - {x: 24, y: 90}
+        - {x: 3, y: 102}
+        - {x: -24, y: 102}
+        - {x: -42, y: 96}
+        - {x: -66, y: 72}
+        - {x: -86, y: 47}
+        - {x: -86, y: -135}
+        - {x: -75, y: -180}
+        - {x: 60, y: -180}
+        - {x: 91, y: -127}
+        - {x: 98, y: -52}
+        - {x: 94, y: 17}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

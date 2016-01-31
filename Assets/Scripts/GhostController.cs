@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using System.Collections.Generic;
 public class GhostController : MonoBehaviour {
+
+    public static List<GhostController> ghostList = new List<GhostController>();
 
 	//public float speed = 5.0f;
     public GameObject player;
@@ -16,13 +18,20 @@ public class GhostController : MonoBehaviour {
     //	transform.position += move * speed * Time.deltaTime;
     //}
 
+    void OnEnable()
+    {
+        if (!ghostList.Contains(this)) ghostList.Add(this);
+    }
+
+    void OnDisable()
+    {
+        if (ghostList.Contains(this)) ghostList.Remove(this);
+    }
+
     void Start()
     {
         player = GameObject.Find("Player");
         rb = GetComponent<Rigidbody>();
-        
-
-
     }
     // Update is called once per frame
     void Update()

@@ -18,7 +18,7 @@ public class DestroyEnemy : MonoBehaviour {
     }
 
     void setCountText(){
-        countText.text = "Count: " + count.ToString();
+        countText.text = "Score: " + count.ToString();
 
     }
 

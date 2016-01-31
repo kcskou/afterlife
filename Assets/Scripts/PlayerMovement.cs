@@ -66,7 +66,6 @@ public class PlayerMovement : MonoBehaviour {
 
         Vector3 moveVecJoystick = new Vector3(CrossPlatformInputManager.GetAxis("Horizontal"),
     	CrossPlatformInputManager.GetAxis("Vertical"), 0);
-        bool isBoosting = CrossPlatformInputManager.GetButton("Boost");
         transform.position += moveVecJoystick * speed * Time.deltaTime;
 
         Vector3 moveVecKeyboard = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);

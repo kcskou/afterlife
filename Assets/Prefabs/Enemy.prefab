@@ -12,7 +12,7 @@ GameObject:
   - 50: {fileID: 5000984}
   - 60: {fileID: 6087036}
   - 114: {fileID: 11478306}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Ghost
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 132808}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -10.323025, y: -6.674727, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

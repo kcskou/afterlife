@@ -32,6 +32,9 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void FixedUpdate()	{
+		if (Input.GetMouseButtonDown(0)) {
+			ani.SetTrigger ("Attack");
+		}
 		var stop = new Vector3 (0, 0, 0);
 		var move = new Vector3 (Input.GetAxis ("Horizontal"), Input.GetAxis ("Vertical"), 0);
 		transform.position += move * speed * Time.deltaTime;

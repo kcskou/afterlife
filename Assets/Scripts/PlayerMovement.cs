@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour {
@@ -12,6 +13,8 @@ public class PlayerMovement : MonoBehaviour {
     void Start(){
         pauseText.text = "";
         gamePaused = false;
+
+        ani = this.GetComponent<Animator>();
 
 
     }
@@ -59,32 +62,33 @@ public class PlayerMovement : MonoBehaviour {
 	float currentState = STATE_DOWN;
 	float currentIdle = STATE_DOWN;
 
-
-	// Use this for initialization
-	void Start () {
-		ani = this.GetComponent<Animator> ();
-	}
+    
 
 	void FixedUpdate()	{
 		if (Input.GetMouseButtonDown(0)) {
 			ani.SetTrigger ("Attack");
 		}
-		var stop = new Vector3 (0, 0, 0);
-		var move = new Vector3 (Input.GetAxis ("Horizontal"), Input.GetAxis ("Vertical"), 0);
-		transform.position += move * speed * Time.deltaTime;
-		if (move == stop) {
+        Vector3 moveVecJoystick = new Vector3(CrossPlatformInputManager.GetAxis("Horizontal"),
+    CrossPlatformInputManager.GetAxis("Vertical"), 0);
+        bool isBoosting = CrossPlatformInputManager.GetButton("Boost");
+        transform.position += moveVecJoystick * speed * Time.deltaTime;
+
+        Vector3 moveVecKeyboard = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
+        transform.position += moveVecKeyboard * speed * Time.deltaTime;
+        var stop = new Vector3 (0, 0, 0);
+		if (moveVecKeyboard == stop || moveVecJoystick == stop) {
 			changeMove (IDLE);
 		}
-		if (move.x > 0) {
+		if (moveVecKeyboard.x > 0 || moveVecJoystick.x > 0) {
 			changeState (STATE_RIGHT);
 			changeMove (MOVE);
-		} else if (move.x < 0) {
+		} else if (moveVecKeyboard.x < 0 || moveVecJoystick.x < 0) {
 			changeState (STATE_LEFT);
 			changeMove (MOVE);
-		} else if (move.y < 0) {
+		} else if (moveVecKeyboard.y < 0 || moveVecJoystick.y < 0) {
 			changeState (STATE_DOWN);
 			changeMove (MOVE);
-		} else if (move.y > 0) {
+		} else if (moveVecKeyboard.y > 0 || moveVecJoystick.y > 0) {
 			changeState (STATE_UP);
 			changeMove (MOVE);
 		}

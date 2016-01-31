@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class DestroyEnemy : MonoBehaviour {
     private int count;
+    public Text countText;
 
     void Start(){
         countText.text = "0";

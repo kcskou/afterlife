@@ -3,7 +3,7 @@ using System.Collections;
 
 using System.Collections.Generic;
 public class GhostController : MonoBehaviour {
-
+        
     Animator ani;
     public static List<GhostController> ghostList = new List<GhostController>();
 
@@ -46,7 +46,7 @@ public class GhostController : MonoBehaviour {
 
     void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody>();
 		ani = this.GetComponent<Animator> ();
         
@@ -119,4 +119,3 @@ public class GhostController : MonoBehaviour {
     //  Quaternion.LookRotation(player.transform.position - transform.position), rotateSpeed * Time.deltaTime);
 //}
 
-}

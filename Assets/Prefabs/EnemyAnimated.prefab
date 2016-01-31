@@ -7,14 +7,14 @@ GameObject:
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 412486}
+  - 4: {fileID: 467884}
   - 212: {fileID: 21223346}
-  - 50: {fileID: 5000984}
-  - 60: {fileID: 6087036}
   - 114: {fileID: 11480396}
   - 95: {fileID: 9578896}
-  m_Layer: 0
-  m_Name: Enemy
+  - 50: {fileID: 5057264}
+  - 61: {fileID: 6176562}
+  m_Layer: 9
+  m_Name: EnemyAnimated
   m_TagString: Ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22,7 +22,7 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &467884
 Transform:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 134066}
@@ -35,7 +35,7 @@ Transform:
 --- !u!50 &5057264
 Rigidbody2D:
   serializedVersion: 2
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 134066}
@@ -49,8 +49,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!60 &6087036
-PolygonCollider2D:
+--- !u!61 &6176562
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -61,21 +61,15 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: 0.43301272, y: 0.25}
-      - {x: 0, y: 0.5}
-      - {x: -0.43301272, y: 0.24999994}
-      - {x: -0.43301272, y: -0.24999994}
-      - {x: -0.000000029802322, y: -0.5}
-      - {x: 0.43301272, y: -0.25000003}
+  serializedVersion: 2
+  m_Size: {x: 0.96, y: 0.96}
 --- !u!95 &9578896
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 132808}
+  m_GameObject: {fileID: 134066}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: b4a70eaab65278e41a3d2278d058d8b3, type: 2}
@@ -97,8 +91,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9434521046cbd143a8eb6aea6e6685e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  moveSpeed: 14
+  player: {fileID: 101654, guid: f65574b886338704fb0f27a7da1d2101, type: 2}
+  moveSpeed: 12
 --- !u!212 &21223346
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -153,6 +147,18 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: b4a70eaab65278e41a3d2278d058d8b3, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: moveSpeed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 101654, guid: f65574b886338704fb0f27a7da1d2101, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 134066}

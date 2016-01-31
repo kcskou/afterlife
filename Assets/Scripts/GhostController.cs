@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GhostControllerNelson : MonoBehaviour {
+using System.Collections.Generic;
+public class GhostController : MonoBehaviour {
 
-	Animator ani;
+    Animator ani;
+    public static List<GhostController> ghostList = new List<GhostController>();
 
 	//public float speed = 5.0f;
     public GameObject player;
@@ -31,6 +33,16 @@ public class GhostControllerNelson : MonoBehaviour {
     //	var move = new Vector3 (Input.GetAxis ("Horizontal2"), Input.GetAxis ("Vertical2"), 0);
     //	transform.position += move * speed * Time.deltaTime;
     //}
+
+    void OnEnable()
+    {
+        if (!ghostList.Contains(this)) ghostList.Add(this);
+    }
+
+    void OnDisable()
+    {
+        if (ghostList.Contains(this)) ghostList.Remove(this);
+    }
 
     void Start()
     {
@@ -93,6 +105,8 @@ public class GhostControllerNelson : MonoBehaviour {
 	void changeMove(int move) {
 		ani.SetInteger ("idleMove", move);
 	}
+    }
+
 
 
 

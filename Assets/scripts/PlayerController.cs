@@ -1,23 +1,44 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityStandardAssets.CrossPlatformInput;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 
-    private float moveForce = 5, boostMultiplier = 2;
-    Rigidbody2D myBody;
+    public float speed = 5.0f, boostMultiplier = 2.0f;
+    private bool gamePaused;
+    public Text pauseText;
 
-	void Start () {
-        myBody = this.GetComponent<Rigidbody2D>();
-	}
-	
-	void FixedUpdate () {
+    void Start() {
+        // myBody = this.GetComponent<Rigidbody2D>();  // KKOU
+        pauseText.text = "";
+        gamePaused = false;
+    }
 
-        Vector2 dirVec = new Vector2(CrossPlatformInputManager.GetAxis("Horizontal"),
-            CrossPlatformInputManager.GetAxis("Vertical"));
- 
-        Vector2 moveVec = dirVec * moveForce;
+    void Update()
+    {
+        if (Input.GetKeyDown("q") || Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (Time.timeScale == 1)
+            {
+                Time.timeScale = 0;
+                pauseText.text = "Paused";
+            }
+            else
+            {
+                Time.timeScale = 1;
+                pauseText.text = "";
+            }
+        }
+    }
+
+    void FixedUpdate () {
+        Vector3 moveVecJoystick = new Vector3(CrossPlatformInputManager.GetAxis("Horizontal"),
+            CrossPlatformInputManager.GetAxis("Vertical"), 0);
         bool isBoosting = CrossPlatformInputManager.GetButton("Boost");
-        myBody.AddForce(moveVec * (isBoosting ? boostMultiplier : 1));
-	}
+        transform.position += moveVecJoystick * speed * Time.deltaTime;
+
+        Vector3 moveVecKeyboard = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
+        transform.position += moveVecKeyboard * speed * Time.deltaTime;
+    }
 }

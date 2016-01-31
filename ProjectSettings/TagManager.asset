@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ghost
   - Attack
+  - Pause Text
+  - Circle
   layers:
   - Default
   - TransparentFX

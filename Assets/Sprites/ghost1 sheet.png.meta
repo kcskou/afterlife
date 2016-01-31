@@ -1,0 +1,240 @@
+fileFormatVersion: 2
+guid: fc2b02d0ac2dff749ae7391aaab1fce1
+timeCreated: 1454271767
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: ghost1 sheet_0
+    21300002: ghost1 sheet_1
+    21300004: ghost1 sheet_2
+    21300006: ghost1 sheet_3
+    21300008: ghost1 sheet_4
+    21300010: ghost1 sheet_5
+    21300012: ghost1 sheet_6
+    21300014: ghost1 sheet_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: ghost1 sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 256
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16, y: 63}
+        - {x: 2, y: 66}
+        - {x: -71, y: 66}
+        - {x: -114, y: 35}
+        - {x: -114, y: -114}
+        - {x: 17, y: -114}
+        - {x: 101, y: -90}
+        - {x: 118, y: -48}
+        - {x: 118, y: -13}
+        - {x: 52, y: -13}
+    - name: ghost1 sheet_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 256
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16, y: 71}
+        - {x: -4, y: 74}
+        - {x: -67, y: 74}
+        - {x: -85, y: 65}
+        - {x: -114, y: -49}
+        - {x: -114, y: -105}
+        - {x: -111, y: -106}
+        - {x: -28, y: -106}
+        - {x: 79, y: -90}
+        - {x: 118, y: -53}
+        - {x: 118, y: -6}
+    - name: ghost1 sheet_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 384
+        width: 256
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 122, y: -12}
+        - {x: 19, y: 82}
+        - {x: -83, y: 82}
+        - {x: -114, y: -17}
+        - {x: -114, y: -99}
+        - {x: -112, y: -102}
+        - {x: -53, y: -102}
+        - {x: 7, y: -95}
+        - {x: 104, y: -79}
+        - {x: 122, y: -38}
+    - name: ghost1 sheet_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 384
+        width: 256
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16, y: 71}
+        - {x: -4, y: 74}
+        - {x: -67, y: 74}
+        - {x: -85, y: 65}
+        - {x: -114, y: -49}
+        - {x: -114, y: -105}
+        - {x: -111, y: -106}
+        - {x: -28, y: -106}
+        - {x: 79, y: -90}
+        - {x: 118, y: -53}
+        - {x: 118, y: -6}
+    - name: ghost1 sheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 78, y: 66}
+        - {x: -39, y: 66}
+        - {x: -118, y: -8}
+        - {x: -118, y: -39}
+        - {x: -112, y: -58}
+        - {x: -93, y: -82}
+        - {x: 6, y: -104}
+        - {x: 69, y: -114}
+        - {x: 108, y: -114}
+        - {x: 114, y: -109}
+        - {x: 114, y: -83}
+        - {x: 92, y: 63}
+    - name: ghost1 sheet_5
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 71, y: 74}
+        - {x: -11, y: 74}
+        - {x: -29, y: 70}
+        - {x: -118, y: -14}
+        - {x: -118, y: -37}
+        - {x: -117, y: -42}
+        - {x: -95, y: -77}
+        - {x: 29, y: -106}
+        - {x: 114, y: -106}
+        - {x: 114, y: -37}
+        - {x: 99, y: 36}
+    - name: ghost1 sheet_6
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 65, y: 82}
+        - {x: -26, y: 82}
+        - {x: -31, y: 80}
+        - {x: -122, y: -20}
+        - {x: -122, y: -56}
+        - {x: -101, y: -82}
+        - {x: 3, y: -99}
+        - {x: 19, y: -102}
+        - {x: 114, y: -102}
+        - {x: 114, y: -55}
+        - {x: 89, y: 77}
+    - name: ghost1 sheet_7
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 71, y: 74}
+        - {x: -11, y: 74}
+        - {x: -29, y: 70}
+        - {x: -118, y: -14}
+        - {x: -118, y: -37}
+        - {x: -117, y: -42}
+        - {x: -95, y: -77}
+        - {x: 29, y: -106}
+        - {x: 114, y: -106}
+        - {x: 114, y: -37}
+        - {x: 99, y: 36}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

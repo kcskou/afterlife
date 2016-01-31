@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour {
     private bool gamePaused;
     public Text pauseText;
 
-    void Start () {
+    void Start() {
         // myBody = this.GetComponent<Rigidbody2D>();  // KKOU
         pauseText.text = "";
         gamePaused = false;
@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetKeyDown("q"))
+        if (Input.GetKeyDown("q") || Input.GetKeyDown(KeyCode.Escape))
         {
             if (Time.timeScale == 1)
             {

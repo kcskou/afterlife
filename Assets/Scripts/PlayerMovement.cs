@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour {
 
 
     void Start(){
+		SoundManager.Init ();
         pauseText.text = "";
         gamePaused = false;
 
@@ -126,5 +127,14 @@ public class PlayerMovement : MonoBehaviour {
 
 	void changeMove(int move) {
 		ani.SetInteger ("idleMove", move);
+	}
+		
+
+	void OnCollisionEnter2D(Collision2D other)
+	{
+		if (other.gameObject.tag == "Ghost")
+		{
+			SoundManager.Play ("BroDying");
+		}   
 	}
 }

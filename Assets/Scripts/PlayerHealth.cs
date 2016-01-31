@@ -11,10 +11,10 @@ public class PlayerHealth : MonoBehaviour {
         Health = MaxHealth;
 	}
 
-    void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.tag == "Ghost") {
+    void OnTriggerEnter(Collision other) {
+        if (other.gameObject.name == "Ghost") {
             Health--;
-            print(Health + "\n");
+            print("????" + Health + "\n");
         }
     }
 

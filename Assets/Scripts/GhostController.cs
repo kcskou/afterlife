@@ -6,7 +6,7 @@ public class GhostController : MonoBehaviour {
 	Animator ani;
 
 	//public float speed = 5.0f;
-    public GameObject player;
+    public GameObject player, attack;
     public int moveSpeed = 4;
     private int MaxDist = 10000000;
     private int MinDist = 1000000;
@@ -35,16 +35,24 @@ public class GhostController : MonoBehaviour {
     void Start()
     {
         player = GameObject.Find("Player");
+        attack = GameObject.Find("Attack");
         rb = GetComponent<Rigidbody>();
 		ani = this.GetComponent<Animator> ();
-        
-
-
     }
     // Update is called once per frame
     void Update()
     {
-        Vector3 direction = player.transform.position - transform.position ;
+        Vector3 direction;
+
+        if (player != null)
+        {
+            direction = player.transform.position - transform.position;
+        }
+        else
+        {
+            direction = transform.position;
+        }
+
 
         // Normalize it so that it's a unit direction vector
         direction.Normalize();
@@ -94,7 +102,17 @@ public class GhostController : MonoBehaviour {
 		ani.SetInteger ("idleMove", move);
 	}
 
-
+    void OnTriggerEnter2D(Collision2D other)
+    {
+        print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        if (other.gameObject.name == "Attack")
+        {
+            Vector2 dirVec = (attack.transform.position - transform.position).normalized;
+            print(dirVec.x + "/" + dirVec.y);
+            Vector2 moveVec = dirVec * 1000;
+            rb.AddForce(moveVec);
+        }
+    }
 
     // rb.constraints = RigidbodyConstraints.FreezeRotation;
     //  transform.LookAt(player.transform);

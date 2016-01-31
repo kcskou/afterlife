@@ -22,8 +22,7 @@ public class PlayerMovement : MonoBehaviour {
 
     void Update()
     {
-        {
-            if (Input.GetKeyDown("q"))
+            if (Input.GetKeyDown("q") || Input.GetKeyDown(KeyCode.Escape))
             {
                 if (Time.timeScale == 1)
                 {
@@ -36,7 +35,6 @@ public class PlayerMovement : MonoBehaviour {
                     pauseText.text = "";
                 }
             }
-        }
     }
 
 

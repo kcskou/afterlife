@@ -12,16 +12,13 @@ public class Spawn : MonoBehaviour {
 	public Transform playAreaMax;
 
 	private Vector3 spawnPoint;
-	public float spawnRate = 0.3f;
+	public float deltaSpawnBreaks = -0.05f;
 
 	public float spawnHeight = 0.0f;
-	public float max = 4;
+	public float maxNumGhost = 40;
 	private int amount;
 
-	public float a = 0.8f;
-	public float c = 0.1f;
-
-	private float nextWaveTime = 0.0f;
+	private float nextSpawnTime = 0.0f;
 	public float spawnBreaks = 1.5f;
 
 	void Start(){
@@ -53,21 +50,26 @@ public class Spawn : MonoBehaviour {
 	}
 
 	void spawnCube()
-	{
-		float b = Random.value;
-		
-		Instantiate(prefabGhosts[Random.Range(0,prefabGhosts.Length)], GetSpawnPoint(), Quaternion.identity);
+	{	
+		amount = GhostController.ghostList.Count;
+		if (amount < maxNumGhost) {		
+			
+			Instantiate (prefabGhosts [Random.Range (0, prefabGhosts.Length)], GetSpawnPoint (), Quaternion.identity);
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		amount = GhostController.ghostList.Count;
-		if (Time.time > nextWaveTime -1 || Time.time < nextWaveTime + 1) {
-			max += spawnRate * Time.deltaTime;
-			if (amount < max) {
-				spawnCube ();
+
+		if (Time.time > nextSpawnTime) {
+			//max += spawnRate * Time.deltaTime;
+			spawnCube();
+			nextSpawnTime += spawnBreaks;
+
+			float check = spawnBreaks + deltaSpawnBreaks;
+			if (check > 0.5) {
+				spawnBreaks += deltaSpawnBreaks;
 			}
-			nextWaveTime += spawnBreaks;
 		}
 	}
 }

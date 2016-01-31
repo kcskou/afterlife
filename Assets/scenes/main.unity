@@ -781,6 +781,10 @@ Prefab:
       propertyPath: m_Name
       value: usethisPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 11478784, guid: 3967c0cbc7a6dcc418b7f0d3afb0a660, type: 2}
+      propertyPath: pauseText
+      value: 
+      objectReference: {fileID: 1042028827}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3967c0cbc7a6dcc418b7f0d3afb0a660, type: 2}
   m_IsPrefabParent: 0

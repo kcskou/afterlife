@@ -63,11 +63,9 @@ public class PlayerMovement : MonoBehaviour {
     
 
 	void FixedUpdate()	{
-		if (Input.GetMouseButtonDown(0)) {
-			ani.SetTrigger ("Attack");
-		}
+
         Vector3 moveVecJoystick = new Vector3(CrossPlatformInputManager.GetAxis("Horizontal"),
-    CrossPlatformInputManager.GetAxis("Vertical"), 0);
+    	CrossPlatformInputManager.GetAxis("Vertical"), 0);
         bool isBoosting = CrossPlatformInputManager.GetButton("Boost");
         transform.position += moveVecJoystick * speed * Time.deltaTime;
 
@@ -77,14 +75,19 @@ public class PlayerMovement : MonoBehaviour {
 		if (moveVecKeyboard == stop || moveVecJoystick == stop) {
 			changeMove (IDLE);
 		}
-		if (moveVecKeyboard.x > 0 || moveVecJoystick.x > 0) {
-			changeState (STATE_RIGHT);
-			changeMove (MOVE);
-		} else if (moveVecKeyboard.x < 0 || moveVecJoystick.x < 0) {
+		if (moveVecJoystick.x > moveVecJoystick.y) {
+			if (moveVecKeyboard.x > 0 || moveVecJoystick.x > 0) {
+				changeState (STATE_RIGHT);
+				changeMove (MOVE);
+			} else if 
+				(moveVecKeyboard.y < 0 || moveVecJoystick.y < 0) {
+				changeState (STATE_DOWN);
+				changeMove (MOVE);
+
+			}
+		} else if 
+			(moveVecKeyboard.x < 0|| moveVecJoystick.x < 0) {
 			changeState (STATE_LEFT);
-			changeMove (MOVE);
-		} else if (moveVecKeyboard.y < 0 || moveVecJoystick.y < 0) {
-			changeState (STATE_DOWN);
 			changeMove (MOVE);
 		} else if (moveVecKeyboard.y > 0 || moveVecJoystick.y > 0) {
 			changeState (STATE_UP);

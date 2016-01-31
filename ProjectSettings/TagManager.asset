@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ghost
+  - Pause Text
+  - Circle
   layers:
   - Default
   - TransparentFX

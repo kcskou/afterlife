@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+using System.Collections.Generic;
 public class GhostController : MonoBehaviour {
-
-	Animator ani;
+        
+    Animator ani;
+    public static List<GhostController> ghostList = new List<GhostController>();
 
 	//public float speed = 5.0f;
     public GameObject player, attack;
@@ -32,10 +34,20 @@ public class GhostController : MonoBehaviour {
     //	transform.position += move * speed * Time.deltaTime;
     //}
 
+    void OnEnable()
+    {
+        if (!ghostList.Contains(this)) ghostList.Add(this);
+    }
+
+    void OnDisable()
+    {
+        if (ghostList.Contains(this)) ghostList.Remove(this);
+    }
+
     void Start()
     {
-        player = GameObject.Find("Player");
         attack = GameObject.Find("Attack");
+        player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody>();
 		ani = this.GetComponent<Animator> ();
     }
@@ -101,6 +113,8 @@ public class GhostController : MonoBehaviour {
 	void changeMove(int move) {
 		ani.SetInteger ("idleMove", move);
 	}
+    }
+
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -123,4 +137,3 @@ public class GhostController : MonoBehaviour {
     //  Quaternion.LookRotation(player.transform.position - transform.position), rotateSpeed * Time.deltaTime);
 //}
 
-}

@@ -13,6 +13,7 @@ GameObject:
   - 95: {fileID: 9578896}
   - 50: {fileID: 5057264}
   - 61: {fileID: 6176562}
+  - 114: {fileID: 11416996}
   m_Layer: 9
   m_Name: EnemyAnimated
   m_TagString: Ghost
@@ -80,6 +81,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11416996
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 134066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1482ac7bb16485048871a121f8c938d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 132150, guid: 3967c0cbc7a6dcc418b7f0d3afb0a660, type: 2}
+  attack: {fileID: 116920, guid: 0e7a46976ff300a4c894289831859594, type: 2}
+  moveSpeed: 4
 --- !u!114 &11480396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -158,7 +173,11 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: player
       value: 
-      objectReference: {fileID: 101654, guid: f65574b886338704fb0f27a7da1d2101, type: 2}
+      objectReference: {fileID: 132150, guid: 3967c0cbc7a6dcc418b7f0d3afb0a660, type: 2}
+    - target: {fileID: 0}
+      propertyPath: attack
+      value: 
+      objectReference: {fileID: 116920, guid: 0e7a46976ff300a4c894289831859594, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 134066}
